@@ -1,2 +1,10 @@
 .DS_Store
 main_project/
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
