@@ -51,28 +51,58 @@ def compare():
         #losingTeam = len(hand2)
         #else:
         #losingTeam = len(hand1)
-    place = 1
-    while len(hand1) > 0 and len(hand2) > 0:
-        fighter1 = hand1[place]
-        fighter2 = hand2[place]
-        print(fighter1.value, fighter2.value)
+    wins1 = 0
+    wins2 = 0
+    round = 0
+    place1 = 0
+    place2 = 0
+    while len(hand1) > 0 or len(hand2) > 0:
+        fighter1 = hand1[place1]
+        fighter2 = hand2[place2]
+        print('Your card:' , fighter1.value)
+        print('Opponents card:' , fighter2.value)
         if fighter1.value > fighter2.value:
             print(fighter1.showCard() , "wins!")
             hand1.append(fighter2)
             hand2.remove(fighter2)
+            wins1 += 1
         elif fighter1.value < fighter2.value:
             print(fighter2.showCard() , "wins!")
             hand2.append(fighter1)
             hand1.remove(fighter1)
+            wins2 += 1
         else:
-            print("tie")
-        print(len(hand1))
-        print(len(hand2))
-        place += 1
+            print("Tie!")
+        print('Your score:' , len(hand1))
+        print('Opponents score:' , len(hand2))
+        print('----------------------------------')
+        if place1 < len(hand1)-1:
+            place1 += 1
+        else:
+            place1 = 0
+
+        if place2 < len(hand2)-1:
+            place2 += 1
+        else:
+            place2 = 0
+
+        if wins1 == 10 or wins2 == 10:
+            break
+        round += 1
+
+        print(round)
+        print('----------------------------------')
 
 compare()
-
-
+def place():
+    if len(hand1) > len(hand2):
+        loser = len(hand2)
+    elif len(hand1) < len(hand2):
+        loser = len(hand1)
+    if place < loser:
+        place += 1
+    elif place >= loser:
+        place -= 1
 
 
 
