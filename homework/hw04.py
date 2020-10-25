@@ -72,6 +72,12 @@ def compare():
             hand1.remove(fighter1)
             wins2 += 1
         else:
+            place1 += 1
+            place2 += 1
+            print+
+
+
+
             print("Tie!")
         print('Your score:' , len(hand1))
         print('Opponents score:' , len(hand2))
