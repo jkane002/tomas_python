@@ -74,7 +74,6 @@ def compare():
         else:
             place1 += 1
             place2 += 1
-            print+
 
 
 
